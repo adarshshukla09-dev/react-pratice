@@ -1,0 +1,26 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import {BrowserRouter,Route,Routes} from "react-router-dom"
+import Homepage from "../pages/HomePage.jsx";
+import  NoteDetail from "../pages/NoteDetail.jsx";
+import  CreatePage from "../pages/CreatePage.jsx";
+function App() {
+
+  return (
+    <>
+    <div className="relative h-full w-full">
+      <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background: radial-gradient
+(125%_125%_at_50%_10%,#000_60%,#00FF9D40_100%)]" />
+    <Routes>
+      <Route path="/" element={<Homepage/>} />
+      <Route path="/create" element={<CreatePage/>} />
+      <Route path="/note/:id" element={<NoteDetail/>} />
+    </Routes>
+  </div>
+    </>
+  )
+}
+
+export default App
